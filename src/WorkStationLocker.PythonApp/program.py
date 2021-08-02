@@ -17,9 +17,11 @@ GPIO.setup(ECHO, GPIO.IN)
 def getCurrentDateTimeStringify():
     return str(datetime.datetime.now()).replace("-", "").replace(":", "").replace(".", "").replace(" ", "")[2:14]
 
+isOnDesk = True
+
 while True:
 	try:
-        GPIO.output(TRIG, False)
+        	GPIO.output(TRIG, False)
 		time.sleep(2)
 
 		GPIO.output(TRIG, True)
@@ -37,15 +39,18 @@ while True:
 
 		if (distance > 150.00):
 			time.sleep(15)
-            if (distance > 150.00):
-                subject = f'Lock{getCurrentDateTimeStringify()}'
-                content = subject
-                receiverEmail = credentials.address
-                senderEmail = credentials.address
-                senderPassword = credentials.password
-                message = libEmailSender.setMessage(subject, content, receiverEmail)
-                libEmailSender.sendEmail(message, senderEmail, senderPassword)
-                
+            		if (distance > 150.00 and isOnDesk == True):
+				isOnDesk = False
+                		subject = f'Lock{getCurrentDateTimeStringify()}'
+                		content = subject
+                		receiverEmail = credentials.address
+                		senderEmail = credentials.address
+                		senderPassword = credentials.password
+                		message = libEmailSender.setMessage(subject, content, receiverEmail)
+                		libEmailSender.sendEmail(message, senderEmail, senderPassword)
+               	else:
+			isOnDesk = True
+ 
 		print (f'{round(distance, 2)} cm')        
 
     except KeyboardInterrupt:
