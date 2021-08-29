@@ -16,7 +16,7 @@ So I was left with no choice but to to defend myself! So here are the steps to a
 2. The sensor is connected to a Raspberry Pi Zero W.
 3. Once booted, the Pi runs a simple Python script, which checks the distance in front of the sensor within a loop.
 4. In case the distance is > 150 cm (ergo I moved away from the desk) => a message with header 'Lock' is sent to an email of mine.
-5. In parallel, the laptop runs a console application that constantly checks my inbox (POP3 client) for emails with header 'Lock' received in the last seconds.
+5. In parallel, the laptop runs a console app which is constantly checking the inbox for 'Lock' emails received in the last seconds.
 6. If such email was received, it executes a "LockWorkStation" command through the cmd.exe which locks the laptop 'automatically'.
 
 ~ HAPPY END ~
