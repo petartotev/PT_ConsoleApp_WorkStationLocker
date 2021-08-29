@@ -6,8 +6,9 @@ WorkStationLocker is a simple console application that locks my office laptop au
 
 ## General Information
 
-At the time of writing I have spent 6 months in Bede Gaming Ltd. Unfortunatelly, during this period I have left my laptop unlocked twice.  
-In my first week I got 'punished' by getting 'Hasselhoffed'. 6 months later, during my probation interview - I got 'Azissed' too (see images).
+At the time of writing I have spent 6 months in Bede Gaming Ltd.  
+Unfortunatelly, during this period I have left my laptop unlocked twice.  
+In my first week I got 'punished' by getting 'Hasselhoffed'. 6 months later, during my probation interview - I got 'Azissed' too (see images).  
 In other words, once I got back from the toilet or the conference room I found my wallpaper updated with pictures of mens' bodies, barely dressed...
 
 So I was left with no choice but to to defend myself! So here are the steps to a secure office well-being:
