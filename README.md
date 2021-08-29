@@ -1,21 +1,25 @@
 # PT_ConsoleApp_WorkStationLocker
 
-WorkStationLocker is a simple console application. It should just lock my office laptop every time I get away from the desk.
+WorkStationLocker is a simple console application that locks my office laptop automatically every time I get away from the desk.
 
 ![Hasselhoff_Scrot](res/scrot/hasselhoff_wallpaper.jpg)
 
 ## General Information
 
-I have spent 6 months in Bede Gaming Ltd. and during this period I have forgotten my laptop unlocked twice.
-In my first week I got Hasselhoffed. 6 months later, during my probation interview - I got Azissed too (see images).
-This means that once I get back after a short visit to the toilet or the conference room my wallpaper is changed with pictures of mens' bodies, barerly dressed...
+At the time of writing I have spent 6 months in Bede Gaming Ltd. Unfortunatelly, during this period I have left my laptop unlocked twice.  
+In my first week I got 'punished' by getting 'Hasselhoffed'. 6 months later, during my probation interview - I got 'Azissed' too (see images).
+In other words, once I got back from the toilet or the conference room I found my wallpaper updated with pictures of mens' bodies, barely dressed...
 
-So I decided to defend myself!
+So I was left with no choice but to to defend myself! So here are the steps to a secure office well-being:
 
-I installed an analogous ultrasonic sensor behind my desk, connected to a Raspberry Pi Zero W. 
-Once the distance in front of it gets longer than a certain value (meaning I moved away from my desk) a message with header 'Lock + current datetime' would be sent to my email.
+1. An analogous ultrasonic sensor (HC-SR04) is installed onto my desk.
+2. The sensor is connected to a Raspberry Pi Zero W.
+3. Once booted, the Pi runs a simple Python script, which checks the distance in front of the sensor within a loop.
+4. In case the distance is > 150 cm (ergo I moved away from the desk) => a message with header 'Lock' is sent to an email of mine.
+5. In parallel, the laptop runs a console application that constantly checks my inbox (POP3 client) for emails with header 'Lock' received in the last seconds.
+6. If such email was received, it executes a "LockWorkStation" command through the cmd.exe which locks the laptop 'automatically'.
 
-What this application would do is to 'listen' for such emails. If it was received in the last seconds a windows command would lock the laptop automatically.
+~ HAPPY END ~
 
 ## Technologies
 
@@ -26,14 +30,16 @@ What this application would do is to 'listen' for such emails. If it was receive
 ## Contents
 
 ### src
-- WorkStationLocker.ConsoleApp - to be executed on the office laptop
-- WorkStationLOcker.PythonApp - to be executed on the Raspberry Pi + ultrasonic sensor
-- WorkStationLocker.sln 
+- WorkStationLocker.sln
+- WorkStationLocker.ConsoleApp // to be executed on the office laptop
+- WorkStationLOcker.PythonApp // to be executed on the Raspberry Pi
 
 ### res
-- hasselhoff_wallpaper.jpg
-- azis_wallpaper.jpg
-
-## ~ HAPPY END ~
+- scrot // screenshots of the traumatized desktop of mine
+  - hasselhoff_wallpaper.jpg
+  - azis_wallpaper.jpg
+- icons
 
 ![As-Is_Scrot](res/scrot/azis_wallpaper.jpg)
+
+## ~ THE END ~
