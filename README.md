@@ -1,6 +1,6 @@
 # PT_ConsoleApp_WorkStationLocker
 
-WorkStationLocker is a simple console application that locks my office laptop automatically every time I get away from the desk.
+WorkStationLocker is a simple console app that locks my office laptop automatically when I get away from the desk - with the help of a Raspberry Pi Zero W and a ultrasonic sensor.
 
 ![Hasselhoff_Scrot](res/scrot/hasselhoff_wallpaper.jpg)
 
